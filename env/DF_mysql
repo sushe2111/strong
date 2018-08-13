@@ -1,0 +1,20 @@
+# Docker image of disconf mysql
+# # VERSION 0.0.1
+# # Author: bolingcavalry
+#
+# #基础镜像使用daocloud.io/library/mysql:8
+FROM mysql:5.6
+#
+# #作者
+ENV AUTO_RUN_DIR /docker-entrypoint-initdb.d
+
+ENV WORK_PATH /usr/local/work
+
+RUN mkdir -p $WORK_PATH
+COPY ./init/db.sql $WORK_PATH/
+
+# #把要执行的shell文件放到/docker-entrypoint-initdb.d/目录下，容器会自动执行这个shell
+COPY ./init $AUTO_RUN_DIR/
+
+# #给执行文件增加可执行权限
+# RUN chmod a+x $AUTO_RUN_DIR/$INSTALL_DATA_SHELL
