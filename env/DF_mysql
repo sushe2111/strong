@@ -11,7 +11,7 @@ ENV AUTO_RUN_DIR /docker-entrypoint-initdb.d
 ENV WORK_PATH /usr/local/work
 
 RUN mkdir -p $WORK_PATH
-COPY ./init/db.sql $WORK_PATH/
+#COPY ./init/db.sql $WORK_PATH/
 
 # #把要执行的shell文件放到/docker-entrypoint-initdb.d/目录下，容器会自动执行这个shell
 COPY ./init $AUTO_RUN_DIR/
