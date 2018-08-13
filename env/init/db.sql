@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS `starmmo_wjs` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci; 
+CREATE DATABASE IF NOT EXISTS `strong` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci; 
 
-CREATE TABLE IF NOT EXISTS `starmmo_wjs`.`tbl_account` (
+CREATE TABLE IF NOT EXISTS `strong`.`tbl_account` (
   `uid` bigint(20) unsigned NOT NULL COMMENT '账号id',
   `uname` varchar(200) COLLATE utf8_bin NOT NULL COMMENT '账号名',
   `createTime` int(10) unsigned NOT NULL COMMENT '账号创建时间',
